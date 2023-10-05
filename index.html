@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpineJS cdn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'md': '793px',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script> -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .font-courier {
+            font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+        }
+    </style>
+
+</head>
+
+<body class="text-base antialiased text-gray-800 bg-gray-200 lg:text-lg font-courier selection:bg-emerald-400">
+    <header class="flex items-center justify-center h-40 mb-8 text-center text-white bg-gray-800 lg:mb-14">
+        <h1 class="text-2xl font-bold underline uppercase lg:text-3xl" contenteditable>
+            Selalu di hati
+        </h1>
+    </header>
+    <!-- 210mm = 793, md = 768 -->
+    <main class="mb-40 lg:flex lg:justify-center lg:gap-4" x-data="{
+        sectionType: ['transition', 'scene', 'action', 'character', 'parenthetical', 'dialogue', 'note'],
+        section: [
+            {type: 'scene', content: 'EXT. Rumah Anne - Mobil - Night'},
+            {type: 'action', content: 'Satria menghentikan mobil dan mematikan mesin. Keduanya terdiam, suasana hening.'},
+            {type: 'action', content: 'Anne menghela nafas, lalu memecah keheningan.'},
+            {type: 'character', content: 'Anne'},
+            {type: 'dialogue', content: 'Sat...'},
+            {type: 'action', content: 'Satria menatap Anne'},
+            {type: 'character', content: 'Anne \(CONT\'D\)'},
+            {type: 'dialogue', content: 'Apa yang kamu bilang ke ibu itu cuma pura-pura kan?'},
+            {type: 'character', content: 'Satria'},
+            {type: 'dialogue', content: 'Kita bahas besok aja ya. Kita berdua lagi capek, Ne'},
+            {type: 'character', content: 'Anne'},
+            {type: 'dialogue', content: 'Engga, Sat.'},
+            {type: 'character', content: 'Satria'},
+            {type: 'dialogue', content: 'Yaudah kalo gitu mau kamu gimana?'},
+            {type: 'character', content: 'Anne'},
+            {type: 'dialogue', content: 'Mau aku, kita stick sama rencana awal. Kita nikah tiga tahun lagi. Dan aku ga mau ubah itu.'},
+            {type: 'action', content: 'Satria memegang dan mengelus-elus tangan Anne'},
+            {type: 'character', content: 'Satria'},
+            {type: 'dialogue', content: 'Kenapa gak kita coba dulu aja?'},
+            {type: 'character', content: 'Anne'},
+            {type: 'dialogue', content: 'Apasih yang dicoba?'},
+            {type: 'character', content: 'Satria'},
+            {type: 'dialogue', content: 'Kita udah enam tahun pacaran. Udah deket banget. Kamu udah tau aku. Aku udah tau kamu. Apa lagi yang mau ditunggu?'},
+            {type: 'character', content: 'Anne'},
+            {type: 'dialogue', content: 'Ya aku belum siap'},
+            {type: 'character', content: 'Satria'},
+            {type: 'dialogue', content: 'Kita udah dewasa, kita udah cocok, finansial ga ada masalah. Apa yang bikin kamu belum siap?'},
+            {type: 'action', content: 'Anne semakin kesal'},
+            {type: 'character', content: 'Anne'},
+            {type: 'dialogue', content: 'BANYAK. Banyak yang aku takutin'},
+            {type: 'parenthetical', content: 'Beat'},
+            {type: 'dialogue', content: 'Hidup sama kamu, jadi istri kamu, gak semudah yang kita lakuin sekarang. Banyak yang harus aku pikirin.'},
+            {type: 'character', content: 'Satria'},
+            {type: 'dialogue', content: 'Ohh jadi maksud kamu hidup sama aku itu sulit?'},
+            {type: 'action', content: 'Anne tak bisa menjawab'},
+            {type: 'character', content: 'Anne'},
+            {type: 'dialogue', content: 'Bukan gitu, Sat. Aku....'},
+            {type: 'character', content: 'Satria'},
+            {type: 'dialogue', content: 'Apa ada selama enam tahun aku ngecewain kamu? apa ada aku nyakitin kamu?'},
+            {type: 'parenthetical', content: 'Beat'},
+            {type: 'dialogue', content: 'Bisa engga sih kamu ngertiin aku sekali... aja? Kamu tau sendiri, Ibu sakit. Dia pengen liat kita sama-sama terus.'},
+            {type: 'character', content: 'Anne'},
+            {type: 'dialogue', content: 'Gak bisa. Aku ga bisa. Kamu ngerti ga sih aku ga bisa?'},
+            {type: 'character', content: 'Satria'},
+            {type: 'dialogue', content: 'Ne... Sekali aja...'},
+            {type: 'parenthetical', content: 'Beat'},
+            {type: 'dialogue', content: 'Jangan egois'},
+            {type: 'character', content: 'Anne'},
+            {type: 'dialogue', content: 'Aku mungkin memang egois dan gak bakal bisa ngertiin kamu, sat. Tapi harusnya kamu ngerti kenapa aku gak bisa.'},
+            {type: 'action', content: 'Anne keluar dari mobil, meninggalkan Satria sendirian yang sedang resah'},
+            {type: 'transition', content: 'CUT TO'},
+        ],
+        isFormat: false,
+        isDelete: false,
+        isAdd: false,
+
+        isFocus: false,
+        focusIndex: '',
+        focusType: '',
+
+        setFocusData(index, type){
+            this.isFocus = true
+            this.focusIndex = index
+            this.focusType = type
+        },
+        cleanFocusData(){
+            this.isFocus = false
+            this.focusIndex = ''
+            this.focusType = ''
+        },
+        deleteSection(){
+            this.section.splice(this.focusIndex, 1);
+            this.cleanFocusData()
+            this.isDelete = false
+        },
+        changeType(type, index = null){
+            if(index == null) {
+                this.section[this.focusIndex].type =  type
+                this.cleanFocusData()
+                this.isFormat = false
+            }else{
+                this.section[index].type =  type
+            }
+        },
+        cancelModal(){
+            this.cleanFocusData()
+            this.isFormat = false
+            this.isDelete = false
+            this.isAdd = false
+        },
+        updateContent(index, content){
+            this.section[index].content = content
+        },
+
+        // Shortcut
+        transitionShortcut(e, index){
+            // handle @focusOut
+            this.isFocusOut = false;
+            $nextTick(() => this.isFocusOut = true);
+
+            this.keyEscape(e, index, 'note');
+            this.keyCtrlBackspace(e,index);
+            
+            this.keyEnter(e, index, 'scene');
+            this.keyTab(e, index, 'character');
+
+            this.keyChangeType(e,index);
+        },
+        sceneShortcut(e, index){
+            // handle @focusOut
+            this.isFocusOut = false;
+            $nextTick(() => this.isFocusOut = true);
+
+            this.keyEscape(e, index, 'note');
+            this.keyCtrlBackspace(e,index);
+            
+            this.keyEnter(e, index, 'action');
+            this.keyTab(e, index, 'character');
+            this.keyCtrlEnter(e,index, 'transition');
+            
+            this.keyChangeType(e,index);
+        },
+        actionShortcut(e, index){
+            // handle @focusOut
+            this.isFocusOut = false;
+            $nextTick(() => this.isFocusOut = true);
+
+            this.keyEscape(e, index, 'note');
+            this.keyCtrlBackspace(e,index);
+            
+            this.keyEnter(e, index, 'character');
+            this.keyTab(e, index, 'character');
+            
+            this.keyChangeType(e,index);
+        },
+        characterShortcut(e, index){
+            // handle @focusOut
+            this.isFocusOut = false;
+            $nextTick(() => this.isFocusOut = true);
+            
+            this.keyEscape(e, index, 'note');
+            this.keyCtrlBackspace(e,index);
+
+            this.keyEnter(e, index, 'dialogue');
+            this.keyTab(e, index, 'parenthetical');
+
+            this.keyChangeType(e,index);
+        },
+        dialogueShortcut(e, index){
+            // handle @focusOut
+            this.isFocusOut = false;
+            $nextTick(() => this.isFocusOut = true);
+
+            this.keyEscape(e, index, 'note');
+            this.keyCtrlBackspace(e,index);
+            
+            this.keyEnter(e, index, 'character');
+            this.keyTab(e, index, 'action');
+            this.keyCtrlEnter(e,index, 'parenthetical');
+
+            this.keyChangeType(e,index);
+        },
+        parentheticalShortcut(e, index){
+            // handle @focusOut
+            this.isFocusOut = false;
+            $nextTick(() => this.isFocusOut = true);
+
+            this.keyEscape(e, index, 'note');
+            this.keyCtrlBackspace(e,index);
+            
+            this.keyEnter(e, index, 'dialogue');
+            this.keyTab(e, index, 'action');
+            this.keyCtrlEnter(e,index, 'character');
+
+            this.keyChangeType(e,index);
+        },
+        noteShortcut(e, index){
+            // handle @focusOut
+            this.isFocusOut = false;
+            $nextTick(() => this.isFocusOut = true);
+
+            this.keyEscape(e, index, 'transition');
+            this.keyCtrlBackspace(e,index);
+            
+            this.keyEnter(e, index, 'action');
+            this.keyTab(e, index, 'character');
+            this.keyCtrlEnter(e,index, 'scene');
+
+            this.keyChangeType(e,index);
+        },
+
+        // Shortcut Utility
+        keyCtrlBackspace(e, index){
+            if(e.ctrlKey && e.key == 'Backspace'){
+                if( this.section.length > 1){
+                    if(confirm('Yakin mau hapus?')){
+                        this.section.splice(index, 1)
+                    } else {
+                        e.preventDefault()
+                    }
+                }
+            }
+        },
+        keyEnter(e,index,type){
+            if(e.key == 'Enter' && !e.ctrlKey){
+                e.preventDefault()
+                this.createSection(type, index)
+            }
+        },
+        keyTab(e,index,type){
+            if(e.key == 'Tab'){
+                e.preventDefault()
+                this.createSection(type, index)
+            }
+        },
+        keyEscape(e,index,type){
+            if(e.key == 'Escape'){
+                e.preventDefault()
+                this.createSection(type, index)
+            }
+        },
+        keyCtrlEnter(e,index,type){
+            if(e.ctrlKey && e.key == 'Enter'){
+                e.preventDefault()
+                this.createSection(type, index)
+            }
+        },
+
+        keyChangeType(e,index){
+            if(e.key == 'Alt'){
+                e.preventDefault()
+            }
+            if(e.altKey && e.key == 'a'){
+                e.preventDefault()
+                this.changeType('action', index)
+            } else if (e.altKey && e.key == 'c'){
+                e.preventDefault()
+                this.changeType('character', index)
+            } else if (e.altKey && e.key == 'd'){
+                e.preventDefault()
+                this.changeType('dialogue', index)
+            } else if (e.altKey && e.key == 'n'){
+                e.preventDefault()
+                this.changeType('note', index)
+            } else if (e.altKey && e.key == 'p'){
+                e.preventDefault()
+                this.changeType('parenthetical', index)
+            } else if (e.altKey && e.key == 's'){
+                e.preventDefault()
+                this.changeType('scene', index)
+            } else if (e.altKey && e.key == 't'){
+                e.preventDefault()
+                this.changeType('transition', index)
+            }
+        },
+
+
+        // Add Section
+        createSection(type, index = null){
+            if(index == null){
+                this.section.splice(this.focusIndex+1, 0, {type: type, content: ''})
+                this.isAdd = false
+                this.this.cleanFocusData()
+            }else{
+                this.section.splice(index+1, 0, {type: type, content: ''})
+            }
+            $nextTick(() => $focus.next());     
+        },
+
+        // handle @focusOut
+        isFocusOut:true,
+    }">
+        <!-- Paper -->
+        <div
+            class="mb-4 sm:mb-8 lg:mb-0 caret-emerald-500 mx-4 md:mx-auto lg:mx-0 bg-white max-w-[210mm] md:w-[210mm] shadow-md pt-4 md:pt-[.5in] pb-8 md:pb-[1in] pl-12 md:pl-[1.5in] pr-8 md:pr-[1in]">
+            <template x-for="(item, index) in section">
+                <section>
+                    <!-- Scene -->
+                    <template x-if="item.type === 'scene'">
+                        <p class="mt-4 text-base font-bold uppercase outline-none" contenteditable x-text="item.content"
+                            @focusIn="setFocusData(index, item.type)"
+                            @focusOut="isFocusOut ? updateContent(index, $el.innerText) : ''"
+                            @keydown="e => sceneShortcut(e,index)">
+                        </p>
+                    </template>
+                    <!-- Action -->
+                    <template x-if="item.type === 'action'">
+                        <p class="mt-4 text-base leading-none outline-none" contenteditable x-text="item.content"
+                            @focusIn="setFocusData(index, item.type)"
+                            @focusOut="isFocusOut ? updateContent(index, $el.innerText) : ''"
+                            @keydown="e => actionShortcut(e,index)">
+                        </p>
+                    </template>
+                    <!-- Character -->
+                    <template x-if="item.type === 'character'">
+                        <p class="mt-4 md:w-[3.8in] w-8/12 ml-auto text-base uppercase leading-none outline-none"
+                            contenteditable x-text="item.content" @focusIn="setFocusData(index, item.type)"
+                            @focusOut="isFocusOut ? updateContent(index, $el.innerText) : ''"
+                            @keydown="e => characterShortcut(e,index)">
+                        </p>
+                    </template>
+                    <!-- Parenthetical -->
+                    <template x-if="item.type === 'parenthetical'">
+                        <p contenteditable
+                            class="md:w-[2.5in] leading-none list-outside list-['('] w-5/12 md:ml-[1.6in] ml-14 text-base list-item outline-none  after:content-[')']"
+                            x-text="item.content" @focusIn="setFocusData(index, item.type)"
+                            @focusOut="isFocusOut ? updateContent(index, $el.innerText) : ''"
+                            @keydown="e => parentheticalShortcut(e,index)">
+                            Parenthetical
+                        </p>
+                    </template>
+                    <!-- Dialogue -->
+                    <template x-if="item.type === 'dialogue'">
+                        <p class="md:w-[3.5in] w-7/12 md:ml-[1in] ml-8 text-base outline-none leading-none"
+                            contenteditable x-text="item.content" @focusIn="setFocusData(index, item.type)"
+                            @focusOut="isFocusOut ? updateContent(index, $el.innerText) : ''"
+                            @keydown="e => dialogueShortcut(e,index)"></p>
+                    </template>
+                    <!-- Note -->
+                    <template x-if="item.type === 'note'">
+                        <p class="px-1 py-1 mt-4 text-base italic leading-none bg-orange-100 border outline-none border-slate-800"
+                            contenteditable x-text="item.content" @focusIn="setFocusData(index, item.type)"
+                            @focusOut="isFocusOut ? updateContent(index, $el.innerText) : ''"
+                            @keydown="e => noteShortcut(e,index)"></p>
+                    </template>
+                    <!-- Transition -->
+                    <template x-if="item.type === 'transition'">
+                        <p class="mt-4 text-base text-right uppercase ml-auto md:w-[2in] w-4/12 outline-none leading-none after:content-[':']"
+                            x-text="item.content" contenteditable @focusIn="setFocusData(index, item.type)"
+                            @focusOut="isFocusOut ? updateContent(index, $el.innerText) : ''"
+                            @keydown="e => transitionShortcut(e,index)"></p>
+                    </template>
+                </section>
+            </template>
+        </div>
+
+        <!-- Hint -->
+        <div class="flex-1 hidden max-w-sm py-2 font-sans text-base leading-tight h-min bg-slate-50 lg:block"
+            x-show="isHint" x-cloak x-transition x-data="{isAdd: false, isChange: false, isHint:true}">
+            <!-- Title -->
+            <div>
+                <div class="flex justify-between px-4">
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                        </svg>
+                        <span class="pt-0.5 font-bold text-lg uppercase">Hint</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6 cursor-pointer" @click="isHint=false">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </div>
+                <p class="px-4 my-2">
+                    A collection of shortcuts to make your typing easier
+                </p>
+                <p class="px-4 my-2">
+                    Shortcuts work when the focus is on the writing block
+                </p>
+            </div>
+            <!-- Add Element -->
+            <div>
+                <div class="flex items-center gap-2 px-4 cursor-pointer group" @click="isAdd = !isAdd">
+                    <span class="text-lg font-bold uppercase group-hover:underline">Add Element</span>
+                    <template x-if="isAdd">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </template>
+                    <template x-if="!isAdd">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </template>
+                </div>
+                <div x-show="isAdd" x-cloak x-transition:enter="duration-500" x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100" x-transition:leave="duration-500"
+                    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                    <div class="px-4 my-2">
+                        <div class="mb-1">Transition</div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Esc</div>
+                            </div>
+                            <div>= Add Note</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Enter</div>
+                            </div>
+                            <div>= Add Scene</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Tab</div>
+                            </div>
+                            <div>= Add Character</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="mb-1">Scene</div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Esc</div>
+                            </div>
+                            <div>= Add Note</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Enter</div>
+                            </div>
+                            <div>= Add Action</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Tab</div>
+                            </div>
+                            <div>= Add Character</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">CTRL</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">Enter</div>
+                            </div>
+                            <div>= Add Transition</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="mb-1">Action</div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Esc</div>
+                            </div>
+                            <div>= Add Note</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Enter</div>
+                            </div>
+                            <div>= Add Character</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Tab</div>
+                            </div>
+                            <div>= Add Character</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="mb-1">Character</div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Esc</div>
+                            </div>
+                            <div>= Add Note</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Enter</div>
+                            </div>
+                            <div>= Add Dialogue</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Tab</div>
+                            </div>
+                            <div>= Add Parenthetical</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="mb-1">Parenthetical</div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Esc</div>
+                            </div>
+                            <div>= Add Note</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Enter</div>
+                            </div>
+                            <div>= Add Dialogue</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Tab</div>
+                            </div>
+                            <div>= Add Action</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">CTRL</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">Enter</div>
+                            </div>
+                            <div>= Add Character</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="mb-1">Note</div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Esc</div>
+                            </div>
+                            <div>= Add Transition</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Enter</div>
+                            </div>
+                            <div>= Add Action</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">Tab</div>
+                            </div>
+                            <div>= Add Character</div>
+                        </div>
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">CTRL</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">Enter</div>
+                            </div>
+                            <div>= Add Scene</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Change Element -->
+            <div>
+                <div class="flex items-center gap-2 px-4 cursor-pointer group" @click="isChange = !isChange">
+                    <span class="text-lg font-bold uppercase group-hover:underline">Change Element</span>
+                    <template x-if="isChange">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </template>
+                    <template x-if="!isChange">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </template>
+                </div>
+                <div id="Keyboard" x-show="isChange" x-cloak x-transition>
+                    <div class="px-4 my-2">
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">ALT</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">a</div>
+                            </div>
+                            <div>= Change to Action</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">ALT</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">c</div>
+                            </div>
+                            <div>= Change to Character</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">ALT</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">d</div>
+                            </div>
+                            <div>= Change to Dialogue</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">ALT</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">n</div>
+                            </div>
+                            <div>= Change to Note</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">ALT</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">p</div>
+                            </div>
+                            <div>= Change to Parenthetical</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">ALT</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">s</div>
+                            </div>
+                            <div>= Change to Scene</div>
+                        </div>
+                    </div>
+                    <div class="px-4 my-2">
+                        <div class="flex flex-wrap items-center my-1 gap-x-2">
+                            <div class="flex gap-1">
+                                <div class="px-2 border-2 rounded border-slate-500">ALT</div>
+                                <div>+</div>
+                                <div class="px-2 border-2 rounded border-slate-500">t</div>
+                            </div>
+                            <div>= Change to Transition</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar for Mobile -->
+        <div x-show="isFocus" class="fixed inset-x-0 bottom-0 flex gap-4 p-2 bg-white border md:hidden">
+            <div x-show="isFocus" class="flex w-full gap-4">
+                <!-- Format Button -->
+                <div @click="isFormat = true"
+                    class="inline-flex items-center flex-1 gap-2 px-1 border border-yellow-400 rounded-sm cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                    </svg>
+                    <span class="pt-0.5">
+                        Format
+                    </span>
+                </div>
+                <!-- Delete Button -->
+                <div @click="isDelete = true"
+                    class="inline-flex items-center flex-1 gap-2 px-1 border rounded-sm cursor-pointer border-rose-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                    </svg>
+                    <span class="pt-0.5">
+                        Delete
+                    </span>
+                </div>
+                <!-- Add  Button -->
+                <div @click="isAdd = true"
+                    class="inline-flex items-center flex-1 gap-2 px-1 border rounded-sm cursor-pointer border-emerald-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="pt-0.5">
+                        Add
+                    </span>
+                </div>
+            </div>
+            <!-- Modal -->
+            <!-- Modal Format -->
+            <div class="absolute flex items-end inset-x-0 bottom-0 h-[100vh] bg-slate-800/50" x-show="isFormat" x-cloak>
+                <div x-show="isFormat" x-cloak x-transition:enter="duration-500"
+                    x-transition:enter-start="translate-y-full" x-transition:enter-end="translate-y-0"
+                    x-transition:leave="duration-500" x-transition:leave-start="translate-y-0"
+                    x-transition:leave-end="translate-y-full" class="w-full py-4 bg-yellow-100 rounded-t-3xl">
+                    <div class="flex justify-between px-4 mb-2 text-lg font-bold">
+                        <div>
+                            Change Format
+                        </div>
+                        <div @click="cancelModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-1 sm:grid-cols-2">
+                        <div @click="changeType('transition')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-yellow-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round"
+                                    d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
+                            <span class="pt-0.5">Transition</span>
+                        </div>
+                        <div @click="changeType('scene')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-yellow-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+                            </svg>
+                            <span class="pt-0.5">Scene</span>
+                        </div>
+                        <div @click="changeType('action')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-yellow-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
+                            </svg>
+                            <span class="pt-0.5">Action</span>
+                        </div>
+                        <div @click="changeType('character')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-yellow-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg>
+                            <span class="pt-0.5">Character</span>
+                        </div>
+                        <div @click="changeType('parenthetical')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-yellow-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                            </svg>
+                            <span class="pt-0.5">Parenthetical</span>
+                        </div>
+                        <div @click="changeType('dialogue')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-yellow-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                            </svg>
+                            <span class="pt-0.5">Dialogue</span>
+                        </div>
+                        <div @click="changeType('note')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-yellow-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            </svg>
+                            <span class="pt-0.5">Note</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Delete -->
+            <div class="absolute flex items-end inset-x-0 bottom-0 h-[100vh] bg-slate-800/50" x-show="isDelete" x-cloak>
+                <div x-show="isDelete" x-cloak x-transition:enter="duration-500"
+                    x-transition:enter-start="translate-y-full" x-transition:enter-end="translate-y-0"
+                    x-transition:leave="duration-500" x-transition:leave-start="translate-y-0"
+                    x-transition:leave-end="translate-y-full" class="w-full py-4 bg-red-100 rounded-t-3xl">
+                    <div class="flex justify-between px-4 mb-2 text-lg font-bold">
+                        <div>
+                            Delete Section
+                        </div>
+                        <div @click="cancelModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="px-4">Are you sure you want to delete this section?</div>
+                    <div class="grid grid-cols-2 gap-1 my-4">
+                        <div @click="deleteSection()"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-red-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="pt-0.5">Delete</span>
+                        </div>
+                        <div @click="cancelModal()"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-red-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="pt-0.5">Cancel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Add -->
+            <div class="absolute flex items-end inset-x-0 bottom-0 h-[100vh] bg-slate-800/50" x-show="isAdd" x-cloak>
+                <div x-show="isAdd" x-cloak x-transition:enter="duration-500"
+                    x-transition:enter-start="translate-y-full" x-transition:enter-end="translate-y-0"
+                    x-transition:leave="duration-500" x-transition:leave-start="translate-y-0"
+                    x-transition:leave-end="translate-y-full" class="w-full py-4 bg-emerald-100 rounded-t-3xl">
+                    <div class="flex justify-between px-4 mb-2 text-lg font-bold">
+                        <div>
+                            Add Section
+                        </div>
+                        <div @click="cancelModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-1 sm:grid-cols-2">
+                        <div @click="createSection('transition')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-emerald-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round"
+                                    d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
+                            <span class="pt-0.5">Transition</span>
+                        </div>
+                        <div @click="createSection('scene')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-emerald-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+                            </svg>
+                            <span class="pt-0.5">Scene</span>
+                        </div>
+                        <div @click="createSection('action')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-emerald-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
+                            </svg>
+                            <span class="pt-0.5">Action</span>
+                        </div>
+                        <div @click="createSection('character')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-emerald-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg>
+                            <span class="pt-0.5">Character</span>
+                        </div>
+                        <div @click="createSection('parenthetical')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-emerald-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                            </svg>
+                            <span class="pt-0.5">Parenthetical</span>
+                        </div>
+                        <div @click="createSection('dialogue')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-emerald-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                            </svg>
+                            <span class="pt-0.5">Dialogue</span>
+                        </div>
+                        <div @click="createSection('note')"
+                            class="inline-flex items-center w-full gap-2 px-4 py-1 cursor-pointer active:bg-emerald-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            </svg>
+                            <span class="pt-0.5">Note</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
